@@ -21,7 +21,7 @@ router.get('/', async (req: Request, res: Response) => {
 router.post('/', async (req: Request, res: Response) => {
   const userRepository = AppDataSource.getRepository(User);
   const { firstName, lastName, email } = req.body;
-  const user = userRepository.create({ firstName, lastName, email });
+  const user = userRepository.create({ userName, email });
 
   try {
     await userRepository.save(user);
