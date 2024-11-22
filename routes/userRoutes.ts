@@ -20,7 +20,7 @@ router.get('/', async (req: Request, res: Response) => {
 // Create a new user
 router.post('/', async (req: Request, res: Response) => {
   const userRepository = AppDataSource.getRepository(User);
-  const { firstName, lastName, email } = req.body;
+  const { userName, email } = req.body;
   const user = userRepository.create({ userName, email });
 
   try {
