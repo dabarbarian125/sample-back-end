@@ -15,6 +15,9 @@ export const AppDataSource = new DataSource({
   entities: [__dirname + '/entities/*.{ts,js}'], // Adjust path for TypeScript
   synchronize: true, // Set to false in production and use migrations
   logging: false,
+  ssl: {
+    rejectUnauthorized: false,
+  }
 });
 
 AppDataSource.initialize()
