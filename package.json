@@ -14,11 +14,13 @@
     "express": "^4.21.1",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "ws": "^8.18.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.1",
+    "@types/ws": "^8.5.13",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
