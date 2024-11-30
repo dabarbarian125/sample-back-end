@@ -11,7 +11,7 @@ const app = express();
 // Use cors middleware
 app.use(
   cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
+    origin: process.env.ORIGIN || 'http://localhost:3000', // Allow requests from this origin
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
   })
 );
