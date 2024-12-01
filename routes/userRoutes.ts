@@ -1,13 +1,13 @@
 // routes/userRoutes.ts
 import { Router, Request, Response } from 'express';
 import { AppDataSource } from '../data-source';
-import { User } from '../entities/User';
+import { Users } from '../entities/Users';
 
 const router = Router();
 
 // Get all users
 router.get('/', async (req: Request, res: Response) => {
-  const userRepository = AppDataSource.getRepository(User);
+  const userRepository = AppDataSource.getRepository(Users);
   try {
     const users = await userRepository.find();
     res.json(users);
@@ -19,9 +19,9 @@ router.get('/', async (req: Request, res: Response) => {
 
 // Create a new user
 router.post('/', async (req: Request, res: Response) => {
-  const userRepository = AppDataSource.getRepository(User);
-  const { userName, email } = req.body;
-  const user = userRepository.create({ userName, email });
+  const userRepository = AppDataSource.getRepository(Users);
+  const { username, email } = req.body;
+  const user = userRepository.create({ username, email });
 
   try {
     await userRepository.save(user);
