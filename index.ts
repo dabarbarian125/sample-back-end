@@ -31,7 +31,7 @@ AppDataSource.initialize()
     const server = http.createServer(app);
 
     // Create a WebSocket server and attach it to the HTTP server
-    const wss = new WebSocket.Server({ server });
+    const wss = new WebSocket.Server({ server, path:'/ws' });
 
     // Set up WebSocket connection handler
     wss.on('connection', (ws: WebSocket) => {
